@@ -58,7 +58,6 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
                         child: TextFormField(
-                          autofocus: true,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             labelText: "Email",
@@ -74,7 +73,6 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
                         child: TextFormField(
-                          autofocus: true,
                           obscureText: true,
                           decoration: InputDecoration(
                             labelText: "Password",
@@ -110,6 +108,62 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 20, bottom: 15),
+                child: Text(
+                  "- OR -",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 0.5, color: Colors.green),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 24,
+                        width: 100,
+                        child: Image.asset(
+                          "assets/facebook.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      Text("Sign In with Facebook"),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                width: double.infinity,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 0.5, color: Colors.green),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 24,
+                        width: 100,
+                        child: Image.asset(
+                          "assets/google.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      Text("Sign In with Google"),
                     ],
                   ),
                 ),
