@@ -1,3 +1,4 @@
+import 'package:app_flutter_shopping/pages/home_page.dart';
 import 'package:app_flutter_shopping/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 
@@ -118,7 +119,14 @@ class LoginPage extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePage(),
+                                ),
+                              );
+                            },
                             child: Text(
                               "Sign In",
                               style: TextStyle(color: Colors.white),
