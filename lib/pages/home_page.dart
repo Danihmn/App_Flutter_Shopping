@@ -1,3 +1,4 @@
+import 'package:app_flutter_shopping/pages/product_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,6 +20,16 @@ class HomePage extends StatelessWidget {
             Text("Categories", style: TextStyle(fontSize: 25)),
             SizedBox(height: 10),
             SizedBox(height: 90, child: categoryList()),
+            SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("Best Selling", style: TextStyle(fontSize: 25)),
+                TextButton(onPressed: () {}, child: Text("See all")),
+              ],
+            ),
+            SizedBox(height: 10),
+            SizedBox(height: 350, child: productList(context)),
           ],
         ),
       ),
@@ -95,5 +106,65 @@ Widget categoryItem() {
       borderRadius: BorderRadius.all(Radius.circular(64)),
     ),
     child: Image.asset("assets/Icon_Devices.png"),
+  );
+}
+
+Widget productList(BuildContext context) {
+  return SizedBox(
+    height: 90,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
+      children: [
+        productItem(context),
+        productItem(context),
+        productItem(context),
+        productItem(context),
+        productItem(context),
+        productItem(context),
+        productItem(context),
+        productItem(context),
+      ],
+    ),
+  );
+}
+
+Widget productItem(BuildContext context) {
+  return Container(
+    padding: EdgeInsets.all(10),
+    margin: EdgeInsets.all(5),
+    width: 170,
+    color: Colors.black12,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProductPage()),
+            );
+          },
+          child: Image.asset(
+            "assets/product-1.png",
+            width: 170,
+            height: 170,
+            fit: BoxFit.cover,
+          ),
+        ),
+        SizedBox(height: 10),
+        Text(
+          "Título do produto",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+        ),
+        SizedBox(height: 10),
+        Text(
+          "Marca",
+          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+        ),
+        SizedBox(height: 5),
+        Text("\$ 100,00", style: TextStyle(color: Colors.green)),
+      ],
+    ),
   );
 }
