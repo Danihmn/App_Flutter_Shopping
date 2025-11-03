@@ -17,11 +17,11 @@ class CartPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsetsGeometry.only(left: 20, top: 20),
+                  padding: const EdgeInsets.only(left: 20, top: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("TOTAL", style: TextStyle(fontSize: 18)),
+                      const Text("TOTAL", style: TextStyle(fontSize: 18)),
                       Text(
                         "\$200,00",
                         style: TextStyle(
@@ -37,13 +37,13 @@ class CartPage extends StatelessWidget {
                   height: 50,
                   width: 150,
                   margin: EdgeInsets.only(right: 20),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.green,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child: TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Checkout",
                       style: TextStyle(color: Colors.white),
                     ),
@@ -59,7 +59,7 @@ class CartPage extends StatelessWidget {
 }
 
 Widget productList() {
-  return ListView(children: [for (var i = 0; i <= 10; i++) productItem()]);
+  return ListView(children: [productItem(), productItem(), productItem()]);
 }
 
 Widget productItem() {
@@ -71,29 +71,29 @@ Widget productItem() {
         Container(
           width: 100,
           height: 100,
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Image.asset("assets/product-1.png"),
         ),
         Padding(
-          padding: EdgeInsetsGeometry.only(top: 20, left: 10),
+          padding: const EdgeInsets.only(top: 20, left: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Título do produto"),
-              Text("\$200,00", style: TextStyle(color: Colors.green)),
-              SizedBox(height: 10),
+              const Text("Título do produto"),
+              const Text("\$200,00", style: TextStyle(color: Colors.green)),
+              const SizedBox(height: 10),
               Container(
                 height: 30,
                 width: 140,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.black12,
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                 ),
                 child: Row(
                   children: [
-                    TextButton(onPressed: () {}, child: Text("-")),
-                    Text("1"),
-                    TextButton(onPressed: () {}, child: Text("+")),
+                    TextButton(onPressed: () {}, child: const Text("-")),
+                    const Text("1"),
+                    TextButton(onPressed: () {}, child: const Text("+")),
                   ],
                 ),
               ),

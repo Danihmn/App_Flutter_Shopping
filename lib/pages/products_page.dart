@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProductPage extends StatelessWidget {
-  final String image;
-  final String title;
-  final String brand;
-  final double price;
-
-  const ProductPage({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.brand,
-    required this.price,
-  });
+class ProductsPage extends StatelessWidget {
+  const ProductsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +10,13 @@ class ProductPage extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return [
             SliverAppBar(
-              backgroundColor: const Color(0xFFFFFFFF),
+              backgroundColor: Color(0xFFFFFFFF),
               expandedHeight: 500,
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                background: Image.asset(image, fit: BoxFit.cover),
+                background: Image.asset("assets/product-10.png"),
               ),
             ),
           ];
@@ -35,28 +24,25 @@ class ProductPage extends StatelessWidget {
         body: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+              padding: EdgeInsetsGeometry.only(top: 10, left: 10, right: 10),
               child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                ),
+                "Dry Fitr Long Sleeve",
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(10),
-              child: Text("by $brand"),
+              padding: EdgeInsetsGeometry.all(10),
+              child: Text("by Nike"),
             ),
-            const Padding(
-              padding: EdgeInsets.all(10),
+            Padding(
+              padding: EdgeInsetsGeometry.all(10),
               child: Text(
                 "Details",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(10),
+            Padding(
+              padding: EdgeInsetsGeometry.all(10),
               child: Text(
                 "Nike Dri-Fit is a poliester fabric designed to help you keep dry so you can more comfortably work harder, longer",
               ),
