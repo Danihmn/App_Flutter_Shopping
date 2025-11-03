@@ -1,4 +1,4 @@
-import 'package:app_flutter_shopping/pages/cart_page.dart';
+import 'package:app_flutter_shopping/pages/tabs_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: CartPage(),
+      home: DefaultTabController(length: 3, child: TabsPage()),
     );
   }
 }
